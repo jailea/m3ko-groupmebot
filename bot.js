@@ -179,11 +179,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Here's a list of things you can do:
-                '/help'
-                '/roasted'
-                '/kys'
-                'And more to come in the future!'");
+    postMessage("Here's a list of things you can do: /roasted, /help, /kys - And more to come! Request Mueez for more commands!");
     this.res.end();
   }
   else {
