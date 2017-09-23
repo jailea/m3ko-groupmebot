@@ -10,7 +10,6 @@ function respond() {
       botRegexRoasted = /^\/roasted/;
       botRegexHelp = /^\/help/;
       botRegexSayreville = /^\/sayreville/;
-      botRegexDatetime = /^\/dt/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -34,13 +33,6 @@ function respond() {
   else if(request.text && botRegexSayreville.test(request.text)) {
     this.res.writeHead(200);
     postMessage("sayrevillek12.net");
-    this.res.end();
-  }
-  else if(request.text && botRegexDatetime.test(request.text)) {
-    this.res.writeHead(200);
-    exports.myDateTime = function () {
-    return Date();
-};
     this.res.end();
   }
   else {
