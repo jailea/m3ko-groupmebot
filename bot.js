@@ -13,7 +13,6 @@ function respond() {
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
       botRegexGian = /^\/gian/; botRegexScrotes = /^\/scrotes/; botRegexShaki = /^\/shaki/;
       botRegexDaf = /^\/dafuq/; botRegexMA32 = /^\/pending/; botRegexTrade = /^\/trade/;
-      botRegexSethw = /^\/sethw/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -172,10 +171,29 @@ function respond() {
       postMessage(siege2);
     this.res.end();
   }
-  else if(request.text && botRegexSethw.test(request.text)) {
-    this.res.writeHead(200);
-      postMessage("ur mum");
-    this.res.end();
+  var sheet = SpreadsheetApp.openByUrl('https://docs.google.com/spreadsheets/d/1FP9Fsxw8UgB9QLfME9wmHul0rc9ZSxMw2DHxKLK7tPc/edit');
+
+//respond to any commands
+function doPost(e) {
+  var post = JSON.parse(e.postData.getDataAsString());
+  var text = post.text;
+  
+  //check if user entered save command or load command
+  if(text.toLowerCase().substring(0, 6) == "/sethw "){
+    saveData(text.substring(6, text.length));
+  }else if(text.toLowerCase().substring(0, 5) == "/hw "){
+    sendText(getData());
+  }
+}
+
+//does the data saving
+function saveData(data){
+  sheet.getRange("A5").setValue(data);
+}
+
+//gets the data
+function getData(){
+  return data = sheet.getRange("A5").getValue();
 }
   
   else {
