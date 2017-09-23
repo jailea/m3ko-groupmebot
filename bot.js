@@ -27,7 +27,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Here's a list of things you can do: /roasted, /help, /kys, /sayreville - And more to come! Request Mueez for more commands!");
+    postMessage("Hi I am M3KO Bot, created by Mueez Khan! Here's a list of things you can do: /roasted, /help, /kys, /sayreville - And more to come! Request Mueez for more commands!");
     this.res.end();
   }
   else if(request.text && botRegexSayreville.test(request.text)) {
