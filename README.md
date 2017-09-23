@@ -1,6 +1,6 @@
 # GroupMe NodeJS Callback Bot for DaddyLeagues Integration (Edited by M3KO)
 
-##Important Note
+## Important Note
 This repository was forked for a bot I've wanted to create. The following information is forked information from the original creator, so I hope this will help you create a bot if you want to, for this is exactly how I did it.
 
 ## Introduction
