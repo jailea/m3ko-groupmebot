@@ -195,7 +195,15 @@ function saveData(data){
 function getData(){
   return data = sheet.getRange("A5").getValue();
 }
-  
+//your bot id
+var botId = "ba37a818f7414482417e15c69a";
+//sends text to the group chat
+function sendText(text){
+  UrlFetchApp.fetch("https://api.groupme.com/v3/bots/post", {"method":"post", "payload":'{"bot_id":"' + botId + '","text":"' + text + '"}'})
+}
+
+//required methods
+function doGet() {} 
   else {
     console.log("don't care");
     this.res.writeHead(200);
