@@ -9,6 +9,7 @@ function respond() {
       botRegexKys = /^\/kys/;
       botRegexRoasted = /^\/roasted/;
       botRegexHelp = /^\/help/;
+      botRegexSayreville = /^\/sayreville/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -26,9 +27,13 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Here's a list of things you can do: /roasted, /help, /kys - And more to come! Request Mueez for more commands!");
+    postMessage("Hi there! I'm a bot scripted by Mueez Khan, also known as M3KO! Here's a list of things you can do to interact with me: /roasted, /help, /kys /sayreville - And more to come! Request Mueez for more commands!");
     this.res.end();
   }
+  else if(request.text && botRegexSayreville.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("sayrevillek12.net");
+    this.res.end();
   else {
     console.log("don't care");
     this.res.writeHead(200);
