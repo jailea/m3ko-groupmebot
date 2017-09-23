@@ -11,6 +11,7 @@ function respond() {
       botRegexHelp = /^\/help/;
       botRegexSayreville = /^\/sayreville/;
       botRegexInfo = /^\/info/;
+      botRegexWhat = /^\/what/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -28,7 +29,7 @@ function respond() {
   }
   else if(request.text && botRegexHelp.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Hi I am M3KO Bot, created by Mueez Khan! Here's a list of things you can do: /roasted, /help, /kys, /sayreville, /info - And more to come! Request Mueez for more commands!");
+    postMessage("Hi I am M3KO Bot, created by Mueez Khan! Here's a list of things you can do: /help, /info /roasted, /kys, /sayreville, /what - And more to come! Request Mueez for more commands!");
     this.res.end();
   }
   else if(request.text && botRegexSayreville.test(request.text)) {
@@ -39,6 +40,11 @@ function respond() {
   else if(request.text && botRegexInfo.test(request.text)) {
     this.res.writeHead(200);
     postMessage("I am M3KO Bot, scripted by Mueez Khan. If you want to know more about Mueez's creations, visit: https://m3komk.wixsite.com/m3ko");
+    this.res.end();
+  }
+  else if(request.text && botRegexWhat.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.tenor.com/images/bf4c9a934f193ef60c253dfdd95df98e/tenor.gif");
     this.res.end();
   }
   else {
