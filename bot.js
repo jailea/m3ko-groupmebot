@@ -79,7 +79,7 @@ function respond() {
     //fs.writeFile('homework.txt', written);
     readMe = request.text.slice(6);
     this.res.writeHead(200);
-    postNessage("HW set!");
+    postMessage("HW set!");
     //postMessage("set HW to" + readMe);
     this.res.end();
   }
