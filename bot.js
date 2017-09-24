@@ -14,6 +14,7 @@ function respond() {
       botRegexWhat = /^\/what/;
       botRegexPing = /^\/ping/;
       botRegexShrug = /^\/shrug/;
+      botRegexRight = /^right bot?/;
       botRegexProcrastination = /^\/procrastination/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -63,6 +64,11 @@ function respond() {
   else if(request.text && botRegexProcrastination.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.tenor.com/images/447da17272e5e9f441b9c01f1a887271/tenor.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexRight.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("u rite, u rite");
     this.res.end();
   }
   else {
