@@ -75,10 +75,12 @@ function respond() {
     this.res.end();
   }
   else if(request.text && botRegexSethw.test(request.text)) {
-    var written = botRegexSethw.test(request.text);
-    fs.writeFile('homework.txt', written);
+   // var written = botRegexSethw.test(request.text);
+    //fs.writeFile('homework.txt', written);
+    readMe = request.text.slice(6);
     this.res.writeHead(200);
-    postMessage("File written!");
+    postNessage("HW set!");
+    //postMessage("set HW to" + readMe);
     this.res.end();
   }
   else if(request.text && botRegexHw.test(request.text)) {
