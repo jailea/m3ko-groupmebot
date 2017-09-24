@@ -56,7 +56,7 @@ function respond() {
   }
   else if(request.text && botRegexShrug.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("¯\_(ツ)_/¯");
+    postMessage("https://media.tenor.com/images/dc8da26e465a52560873633e5f1883d0/tenor.gif");
     this.res.end();
   }
   else {
