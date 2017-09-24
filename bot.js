@@ -2,7 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
 var readMe = fs.readFileSync('homework.txt', 'utf8');
-var writeMe = fs.writeFileSync('homework.txt', written);
+var writeMe = fs.writeFileSync('homework.txt');
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -77,7 +77,7 @@ function respond() {
   }
   else if(request.text && botRegexSethw.test(request.text)) {
     var written = botRegexSethw.test(request.text.slice(5));
-    fs.writeFile('writeMe', written);
+    fs.writeFile('writeMe', 'written');
     this.res.writeHead(200);
     postMessage("File written!");
     this.res.end();
