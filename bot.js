@@ -1,7 +1,7 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
-var readMe = fs.readFileSync('homework.txt', 'utf8');
+var readMe = "tomato"
 var botID = process.env.BOT_ID;
 
 function respond() {
