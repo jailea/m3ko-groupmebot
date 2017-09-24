@@ -71,6 +71,9 @@ function respond() {
     if(user_id="271432571") {
       postMessage("ye u rite");
     }
+    else {
+    postMessage("nah u ain't");
+    }
     this.res.end();
   }
   else {
