@@ -77,7 +77,7 @@ function respond() {
   }
   else if(request.text && botRegexSethw.test(request.text)) {
     this.res.writeHead(200);
-    var written = botRegexSethw.test(request.text).slice(6);
+    var written = request.text.slice(6);
     fs.writeFile(writeMe, written);
     postMessage("File written!");
     this.res.end();
