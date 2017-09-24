@@ -84,6 +84,7 @@ function respond() {
       readMe = " ";
       this.res.writeHead(200);
       postMessage("HW cleared!");
+      this.res.end();
     }
     //adds input onto readMe variable
     else{
