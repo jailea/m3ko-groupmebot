@@ -14,7 +14,7 @@ function respond() {
       botRegexWhat = /^\/what/;
       botRegexPing = /^\/ping/;
       botRegexShrug = /^\/shrug/;
-      botRegexRight = /^right bot?/;
+      botRegexRight = /^\right bot?/;
       botRegexProcrastination = /^\/procrastination/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
