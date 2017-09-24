@@ -1,6 +1,8 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-
+var fs = require('fs');
+var readMe = fs.readFileSync('homework.txt', 'utf8');
+fs.writeFileSync('homework.txt', readMe);
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -16,6 +18,7 @@ function respond() {
       botRegexShrug = /^\/shrug/;
       botRegexRight = /^\/amirite/;
       botRegexProcrastination = /^\/procrastination/;
+      botRegexHw = /^\/hw/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -69,6 +72,11 @@ function respond() {
   else if(request.text && botRegexRight.test(request.text)) {
     this.res.writeHead(200);
     postMessage("ye u rite");
+    this.res.end();
+  }
+  else if(request.text && botRegexRight.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage(readMe);
     this.res.end();
   }
   else {
