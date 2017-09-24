@@ -1,8 +1,9 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
-var readMe = "tomato"
-var input = " "
+var readMe = "tomato";
+var input = " ";
+var clear = "";
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -20,6 +21,7 @@ function respond() {
       botRegexProcrastination = /^\/procrastination/;
       botRegexHw = /^\/hw/;
       botRegexSethw = /^\/sethw/;
+      botRegexClearhw = /^\/clearhw/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -99,6 +101,19 @@ function respond() {
   else if(request.text && botRegexHw.test(request.text)) {
     this.res.writeHead(200);
     postMessage(readMe);
+    this.res.end();
+  }
+  else if(request.text && botRegexClearhw.test(request.text)) {
+        input = request.text.slice(6);
+    //"clear" clears the hw
+    if(input = "clear"){
+      readMe = " ";
+    }
+    else{
+      readMe += input;
+    }
+    this.res.writeHead(200);
+    postMessage("Homework cleared!");
     this.res.end();
   }
   else {
