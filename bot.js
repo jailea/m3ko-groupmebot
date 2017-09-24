@@ -2,6 +2,7 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
 var readMe = "tomato"
+var input = " "
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -77,11 +78,22 @@ function respond() {
   else if(request.text && botRegexSethw.test(request.text)) {
    // var written = botRegexSethw.test(request.text);
     //fs.writeFile('homework.txt', written);
-    readMe = request.text.slice(6);
+    input = request.text.slice(6);
+    //"clear" clears the hw
+    if(input = "clear"){
+      readMe = " ";
+      this.res.writeHead(200);
+      postMessage("HW cleared!");
+    }
+    //adds input onto readMe variable
+    else{
+      readMe += input;
+    
     this.res.writeHead(200);
-    postMessage("HW set!");
-    //postMessage("set HW to" + readMe);
+    //postMessage("HW set!");
+    postMessage("set HW to" + readMe);
     this.res.end();
+    }
   }
   else if(request.text && botRegexHw.test(request.text)) {
     this.res.writeHead(200);
