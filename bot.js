@@ -1,9 +1,8 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var fs = require('fs');
-var readMe = "tomato";
-var input = " ";
-var clear = "";
+var readMe = "tomato"
+var input = " "
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -21,7 +20,6 @@ function respond() {
       botRegexProcrastination = /^\/procrastination/;
       botRegexHw = /^\/hw/;
       botRegexSethw = /^\/sethw/;
-      botRegexClearhw = /^\/clearhw/;
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
@@ -64,8 +62,7 @@ function respond() {
   }
   else if(request.text && botRegexShrug.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://media.tenor.com/images/dc8da26e465a52560873633e5f1883d0/tenor.gif");
-    this.res.end();
+    postMessage("https://media.tenor.com/images/dc8da26e465a52560873633e5f1883d0/tenor.gif")    this.res.end();
   }
   else if(request.text && botRegexProcrastination.test(request.text)) {
     this.res.writeHead(200);
@@ -78,42 +75,19 @@ function respond() {
     this.res.end();
   }
   else if(request.text && botRegexSethw.test(request.text)) {
-   // var written = botRegexSethw.test(request.text);
+    //var written = botRegexSethw.test(request.text);
     //fs.writeFile('homework.txt', written);
-    input = request.text.slice(6);
-    //"clear" clears the hw
-    if(input = "clear"){
-      readMe = " ";
-      this.res.writeHead(200);
-      postMessage("HW cleared!");
-      this.res.end();
-    }
+    input = request.text.slice(6) + "\n";
     //adds input onto readMe variable
-    else{
-      readMe += input;
-    
+    readMe += input;
     this.res.writeHead(200);
     //postMessage("HW set!");
     postMessage("set HW to" + readMe);
     this.res.end();
-    }
   }
   else if(request.text && botRegexHw.test(request.text)) {
     this.res.writeHead(200);
     postMessage(readMe);
-    this.res.end();
-  }
-  else if(request.text && botRegexClearhw.test(request.text)) {
-        input = request.text.slice(6);
-    //"clear" clears the hw
-    if(input = "clear"){
-      readMe = " ";
-    }
-    else{
-      readMe += input;
-    }
-    this.res.writeHead(200);
-    postMessage("Homework cleared!");
     this.res.end();
   }
   else {
