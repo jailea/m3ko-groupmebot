@@ -68,7 +68,9 @@ function respond() {
   }
   else if(request.text && botRegexRight.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("ye u rite");
+    if(user_id="271432571") {
+      postMessage("ye u rite");
+    }
     this.res.end();
   }
   else {
